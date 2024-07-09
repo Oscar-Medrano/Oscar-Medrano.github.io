@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { Button } from "./ui/button"; 
+import Image from 'next/image';
+import logo from '../public/logo.svg';
 
 //components
 import Nav from "./Nav"
+import MobileNav from "./MobileNav"
 
 const Header = () => {
     return (
@@ -10,9 +13,12 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
             {/*Logo */}
             <Link href='/'>
-                <h1 className="text-4xl font-semibold">
-                    Oscar Medrano.
-                </h1>
+                <Image
+                src={logo}
+                alt="My Logo" // Add a descriptive alt text for accessibility
+                width={44} // Adjust width as needed
+                height={11} // Adjust height as needed
+                />
             </Link>
 
             {/*Desktop Nav*/}
@@ -24,7 +30,9 @@ const Header = () => {
             </div>
 
             {/*mobile nav*/}
-            <div className="xl:hidden">Mobile nav</div>
+            <div className="xl:hidden">
+                <MobileNav />
+            </div>
         </div>
     </header>
     );
