@@ -27,12 +27,7 @@ const MobileNav = () => {
 
       {isMobile && ( // Conditionally render scrollable content for mobile screens
         <SheetContent className="flex flex-col overflow-auto h-screen">
-          <div className="m-32 mb-40 text-center text-2xl">
-            <Link href="/">
-              <h1 className="text-4xl font-semibold">Oscar Medrano.</h1>
-            </Link>
-          </div>
-          <nav className="flex flex-col justify-center items-center gap-8">
+          <nav className="flex flex-col justify-center items-center gap-8 mt-12">
             {links.map((link, index) => (
               <Link
                 href={link.path}
